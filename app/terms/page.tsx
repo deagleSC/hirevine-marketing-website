@@ -3,30 +3,30 @@ import { Navbar } from "@/components/navbar";
 import { Footer2 } from "@/components/footer2";
 import { StructuredData } from "@/components/structured-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://chessvine.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Chessvine Terms of Service - Read the rules and guidelines for using our AI-powered chess analysis platform. Understand your rights and responsibilities.",
+    "Hirevine Terms of Service - Read the rules and guidelines for using our Enterprise Talent Intelligence Platform. Understand your rights and responsibilities.",
   keywords: [
-    "chessvine terms of service",
+    "hirevine terms of service",
     "terms and conditions",
-    "chess platform terms",
+    "recruitment platform terms",
     "user agreement",
   ],
   openGraph: {
-    title: "Terms of Service - Chessvine",
+    title: "Terms of Service - Hirevine",
     description:
-      "Chessvine Terms of Service - Read the rules and guidelines for using our AI-powered chess analysis platform. Understand your rights and responsibilities.",
+      "Hirevine Terms of Service - Read the rules and guidelines for using our Enterprise Talent Intelligence Platform. Understand your rights and responsibilities.",
     url: `${siteUrl}/terms`,
-    siteName: "Chessvine",
+    siteName: "Hirevine",
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
         width: 1200,
         height: 630,
-        alt: "Chessvine - Terms of Service",
+        alt: "Hirevine - Terms of Service",
         type: "image/png",
       },
     ],
@@ -35,17 +35,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service - Chessvine",
+    title: "Terms of Service - Hirevine",
     description:
-      "Chessvine Terms of Service - Read the rules and guidelines for using our platform.",
+      "Hirevine Terms of Service - Read the rules and guidelines for using our platform.",
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
-        alt: "Chessvine - Terms of Service",
+        alt: "Hirevine - Terms of Service",
       },
     ],
-    creator: "@chessvine",
-    site: "@chessvine",
+    creator: "@hirevine",
+    site: "@hirevine",
   },
   alternates: {
     canonical: `${siteUrl}/terms`,
@@ -61,7 +61,7 @@ const termsPageSchema = {
   "@type": "WebPage",
   name: "Terms of Service",
   description:
-    "Chessvine Terms of Service - Read the rules and guidelines for using our platform.",
+    "Hirevine Terms of Service - Read the rules and guidelines for using our platform.",
   url: `${siteUrl}/terms`,
 };
 
@@ -85,7 +85,7 @@ export default function TermsPage() {
                 1. Acceptance of Terms
               </h2>
               <p>
-                By accessing or using Chessvine, you agree to be bound by these
+                By accessing or using Hirevine, you agree to be bound by these
                 Terms of Service. If you disagree with any part of these terms,
                 you may not access the service.
               </p>
@@ -96,8 +96,8 @@ export default function TermsPage() {
                 2. Description of Service
               </h2>
               <p>
-                Chessvine is an AI-powered chess game analysis platform that
-                allows users to upload PGN files, receive detailed game
+                Hirevine is an Enterprise Talent Intelligence Platform that
+                allows organizations to upload resumes, conduct AI-powered interviews, and manage recruitment
                 analysis, and practice with generated puzzles. The service uses
                 artificial intelligence to provide insights and recommendations.
               </p>
@@ -167,8 +167,8 @@ export default function TermsPage() {
                     Our Content
                   </h3>
                   <p>
-                    All content, features, and functionality of Chessvine,
-                    including analysis results, are owned by Chessvine and
+                    All content, features, and functionality of Hirevine,
+                    including interview results and candidate data, are owned by Hirevine and
                     protected by intellectual property laws.
                   </p>
                 </div>
@@ -206,7 +206,7 @@ export default function TermsPage() {
                 8. Limitation of Liability
               </h2>
               <p>
-                To the maximum extent permitted by law, Chessvine shall not be
+                To the maximum extent permitted by law, Hirevine shall not be
                 liable for any indirect, incidental, special, consequential, or
                 punitive damages, or any loss of profits or revenues, whether
                 incurred directly or indirectly, or any loss of data, use,
@@ -274,8 +274,8 @@ export default function TermsPage() {
         <Footer2
           logo={{
             src: "/app-logo.png",
-            alt: "Chessvine",
-            title: "Chessvine",
+            alt: "Hirevine",
+            title: "Hirevine",
             url: "/",
           }}
           tagline="Checkmate your limits with AI-driven chess improvement."
@@ -303,7 +303,7 @@ export default function TermsPage() {
               ],
             },
           ]}
-          copyright={`© ${new Date().getFullYear()} Chessvine. All rights reserved.`}
+          copyright={`© ${new Date().getFullYear()} Hirevine. All rights reserved.`}
           bottomLinks={[
             { text: "Privacy Policy", url: "/privacy" },
             { text: "Terms of Service", url: "/terms" },

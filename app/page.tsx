@@ -8,40 +8,42 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer2 } from "@/components/footer2";
 import { StructuredData } from "@/components/structured-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://chessvine.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
 
 export const metadata: Metadata = {
-  title: "Chessvine - Checkmate your limits | AI Chess Analysis Platform",
+  title:
+    "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
   description:
-    "Transform your chess game with AI-driven analysis, customized puzzles, and personalized learning paths. Upload PGN files and get detailed insights to improve your chess skills.",
+    "Streamline your recruitment process with AI-powered candidate screening, automated resume parsing, and voice-based interviews. Reduce time-to-hire by 85% with Hirevine's multimodal intelligence engine.",
   keywords: [
-    "chess analysis",
-    "chess AI",
-    "PGN analyzer",
-    "chess game analysis",
-    "chess training",
-    "chess puzzles",
-    "chess improvement",
-    "chess insights",
-    "chess strategy",
-    "chess tactics",
-    "online chess",
-    "chess platform",
-    "AI chess",
-    "chess learning",
+    "talent intelligence",
+    "AI recruitment",
+    "resume parsing",
+    "automated screening",
+    "AI interviews",
+    "recruitment platform",
+    "hiring automation",
+    "candidate screening",
+    "talent acquisition",
+    "recruitment AI",
+    "hiring platform",
+    "enterprise recruitment",
+    "voice interviews",
+    "multimodal AI",
   ],
   openGraph: {
-    title: "Chessvine - Checkmate your limits | AI Chess Analysis Platform",
+    title:
+      "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
     description:
-      "Transform your chess game with AI-driven analysis, customized puzzles, and personalized learning paths. Upload PGN files and get detailed insights to improve your chess skills.",
+      "Streamline your recruitment process with AI-powered candidate screening, automated resume parsing, and voice-based interviews. Reduce time-to-hire by 85% with Hirevine.",
     url: siteUrl,
-    siteName: "Chessvine",
+    siteName: "Hirevine",
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
         width: 1200,
         height: 630,
-        alt: "Chessvine - AI Chess Analysis Platform",
+        alt: "Hirevine - Enterprise Talent Intelligence Platform",
         type: "image/png",
       },
     ],
@@ -50,17 +52,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chessvine - Checkmate your limits | AI Chess Analysis Platform",
+    title:
+      "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
     description:
-      "Transform your chess game with AI-driven analysis, customized puzzles, and personalized learning paths.",
+      "Streamline your recruitment process with AI-powered candidate screening, automated resume parsing, and voice-based interviews.",
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
-        alt: "Chessvine - AI Chess Analysis Platform",
+        alt: "Hirevine - Enterprise Talent Intelligence Platform",
       },
     ],
-    creator: "@chessvine",
-    site: "@chessvine",
+    creator: "@hirevine",
+    site: "@hirevine",
   },
   alternates: {
     canonical: siteUrl,
@@ -70,21 +73,33 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Chessvine",
+  name: "Hirevine",
   url: siteUrl,
   logo: `${siteUrl}/app-logo.png`,
   description:
-    "AI-powered chess game analysis platform helping players improve their game through AI-driven insights and personalized learning.",
-  sameAs: [],
+    "Enterprise Talent Intelligence Platform. AI-powered recruitment screening, automated resume parsing, and voice-based interviews to streamline the hiring process.",
+  sameAs: [
+    // Add social media links when available
+    // "https://twitter.com/hirevine",
+    // "https://linkedin.com/company/hirevine",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Customer Service",
+    email: "supratik.deagle@gmail.com",
+    availableLanguage: ["English"],
+  },
+  foundingDate: "2025",
+  legalName: "Hirevine",
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Chessvine",
+  name: "Hirevine",
   url: siteUrl,
   description:
-    "AI-powered chess game analysis platform. Upload your PGN files, get detailed insights, practice puzzles, and improve your chess game.",
+    "Enterprise Talent Intelligence Platform. AI-powered candidate screening, automated resume parsing, and voice-based interviews to reduce time-to-hire by 85%.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -98,17 +113,33 @@ const websiteSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Chessvine",
-  applicationCategory: "Game",
+  name: "Hirevine",
+  applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
   },
   description:
-    "AI-powered chess game analysis platform. Upload your PGN files, get detailed insights, practice puzzles, and improve your chess game.",
+    "Enterprise Talent Intelligence Platform. AI-powered candidate screening, automated resume parsing, and voice-based interviews to streamline recruitment.",
   url: siteUrl,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    ratingCount: "1",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  featureList: [
+    "AI-Powered Resume Parsing",
+    "Real-Time Voice Interviews",
+    "Automated Candidate Screening",
+    "Human-in-the-Loop Evaluation",
+    "Team Collaboration",
+    "Analytics Dashboard",
+  ],
 };
 
 const faqSchema = {
@@ -117,34 +148,34 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is Chessvine?",
+      name: "What is Hirevine?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Chessvine is an AI-powered chess improvement platform that helps serious players analyze their games, practice with customized puzzles, and follow personalized learning paths. Upload your PGN files to get detailed AI-driven insights into your gameplay, mistakes, and strategic opportunities.",
+        text: "Hirevine is an Enterprise Talent Intelligence Platform that streamlines recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews. It helps organizations reduce time-to-hire by 85% by automating resume review and technical screening.",
       },
     },
     {
       "@type": "Question",
-      name: "How does the AI game analysis work?",
+      name: "How does AI resume parsing work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Our advanced AI engine analyzes every move in your uploaded games, identifying critical moments, tactical mistakes, and strategic improvements. The analysis breaks down key positions, evaluates move quality, and provides actionable recommendations to help you understand where you can improve.",
+        text: "Hirevine uses Gemini 2.0 Flash multimodal AI to process PDF resumes directly, extracting structured data including name, email, skills, experience, and education. No brittle OCR or regex parsing—the AI understands resume formats naturally and extracts key information automatically.",
       },
     },
     {
       "@type": "Question",
-      name: "What file format do you support?",
+      name: "What file formats do you support for resumes?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Chessvine supports PGN (Portable Game Notation) files, which is the standard format for chess games. You can upload PGN files from any chess platform, including Chess.com, Lichess, chess24, or games you've saved manually.",
+        text: "Hirevine supports PDF resume files. Our multimodal AI engine can process resumes in various formats and layouts, automatically extracting candidate information, skills, work experience, and education details.",
       },
     },
     {
       "@type": "Question",
-      name: "Is Chessvine really free?",
+      name: "How do AI interviews work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes! Chessvine is currently in free preview, which means all features are available at no cost. This includes unlimited game analysis, AI-powered insights, customized puzzles, and personalized learning paths.",
+        text: "Hirevine conducts real-time voice-based interviews using Gemini 2.0 Flash Live, with sub-800ms latency. The AI builds dynamic prompts based on the job description and candidate resume, asking relevant technical questions and following up based on responses. The interview is streamed in real-time and transcripts are automatically generated.",
       },
     },
   ],
@@ -157,65 +188,117 @@ export default function Home() {
       <StructuredData data={websiteSchema} />
       <StructuredData data={softwareApplicationSchema} />
       <StructuredData data={faqSchema} />
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: siteUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Features",
+              item: `${siteUrl}/#features`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Pricing",
+              item: `${siteUrl}/#pricing`,
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: "FAQ",
+              item: `${siteUrl}/#faq`,
+            },
+          ],
+        }}
+      />
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: "Talent Intelligence & Recruitment Platform",
+          provider: {
+            "@type": "Organization",
+            name: "Hirevine",
+          },
+          areaServed: "Worldwide",
+          description:
+            "AI-powered recruitment services including resume parsing, candidate screening, and voice-based interviews.",
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+          },
+        }}
+      />
       <div className="min-h-screen">
         <Navbar />
         <Hero7
-          heading="Checkmate Your Limits with AI-Driven Chess Improvement"
-          description="Transform your chess game with AI-driven analysis, customized puzzles, and personalized learning paths. Perfect for serious players committed to improvement."
+          heading="Streamline Your Hiring Process with AI-Powered Talent Intelligence"
+          description="Reduce time-to-hire by 85% with automated resume parsing, AI-powered candidate screening, and voice-based interviews. Perfect for high-growth organizations looking to scale recruitment efficiently."
           button={{
-            text: "Start Free Preview",
-            url: "https://chessvine-web-881017844394.asia-south1.run.app/",
+            text: "Get Started",
+            url: "https://hirevine-web-1026586041764.asia-south1.run.app/",
           }}
           reviews={null}
         />
 
-        {/* Feature 1: AI Game Analysis - Image on right, text on left */}
+        {/* Feature 1: Multimodal Resume Parsing - Image on right, text on left */}
         <Feature1
           id="features"
-          title="AI-Driven Game Analysis"
-          description="Upload your PGN files and get detailed AI-driven insights into your games. Understand your mistakes, identify patterns, and discover opportunities for improvement. Our advanced analysis engine breaks down every move, highlighting critical moments and strategic decisions."
-          imageSrcLight="/assets/analysis-light.jpeg"
-          imageSrcDark="/assets/analysis-dark.jpeg"
-          imageAlt="AI Game Analysis"
+          title="Multimodal AI Resume Parsing"
+          description="Process PDF resumes directly with Gemini 2.0 Flash multimodal AI—no brittle OCR or regex parsing. Automatically extract candidate information, skills, experience, and education. Our advanced AI understands resume formats naturally and extracts structured data in seconds."
+          imageSrcLight="/assets/analysis-light.png"
+          imageSrcDark="/assets/analysis-dark.png"
+          imageAlt="AI Resume Parsing"
           imagePosition="right"
           variant="default"
         />
 
-        {/* Feature 2: Customized Puzzles - Image on left, text on right */}
+        {/* Feature 2: Real-Time AI Interviews - Image on left, text on right */}
         <Feature1
-          title="Customized Puzzles from Your Games"
-          description="Practice with puzzles automatically generated from your actual game mistakes. Each puzzle is tailored to your playing style and weaknesses, helping you improve where it matters most. Difficulty levels adapt to your skill, ensuring continuous growth."
-          imageSrcLight="/assets/puzzles-light.jpeg"
-          imageSrcDark="/assets/puzzles-dark.jpeg"
-          imageAlt="Customized Puzzles"
+          title="Real-Time AI-Powered Interviews"
+          description="Conduct voice-based interviews with sub-800ms latency using Gemini 2.0 Flash Live. The AI builds dynamic prompts based on job descriptions and candidate resumes, asking relevant technical questions and following up intelligently. Stream interviews in real-time with automatic transcript generation."
+          imageSrcLight="/assets/puzzles-light.png"
+          imageSrcDark="/assets/puzzles-dark.png"
+          imageAlt="AI Interviews"
           imagePosition="left"
           variant="muted"
         />
 
-        {/* Feature 3: Personalized Learning Path - Image on right, text on left */}
+        {/* Feature 3: Human-in-the-Loop Evaluation - Image on right, text on left */}
         <Feature1
-          title="Personalized Learning Path"
-          description="Get a customized learning path designed specifically for your chess journey. Our AI analyzes your game patterns, identifies your strengths and weaknesses, then automatically creates a structured improvement plan tailored to your skill level. Track your progress and see measurable results over time."
-          imageSrcLight="/assets/dashboard-light.jpeg"
-          imageSrcDark="/assets/dashboard-dark.jpeg"
-          imageAlt="Personalized Learning Path"
+          title="Human-in-the-Loop Evaluation"
+          description="Maintain human oversight with mandatory justification signatures for all hiring decisions. Evaluators review AI-generated scores and summaries, then provide their own assessment with required justifications. This HITL model ensures quality while maintaining the speed of AI automation."
+          imageSrcLight="/assets/dashboard-light.png"
+          imageSrcDark="/assets/dashboard-dark.png"
+          imageAlt="Evaluation Dashboard"
           imagePosition="right"
           variant="default"
         />
 
         <Pricing4
           title="Pricing"
-          description="Chessvine is currently in free preview. Pricing plans will be introduced in the future as we continue to enhance the platform."
+          description="Hirevine is currently in free preview. Pricing plans will be introduced in the future as we continue to enhance the platform."
           plans={[
             {
-              name: "Pro",
-              badge: "Pro",
-              monthlyPrice: "$10",
-              yearlyPrice: "$100",
+              name: "Professional",
+              badge: "Professional",
+              monthlyPrice: "$99",
+              yearlyPrice: "$990",
               features: [
-                "Unlimited games",
-                "Advanced analysis",
-                "Advanced puzzles",
+                "Unlimited resume parsing",
+                "AI-powered interviews",
+                "Advanced candidate matching",
+                "Team collaboration",
               ],
               buttonText: "Get Started",
             },
@@ -225,24 +308,27 @@ export default function Home() {
               monthlyPrice: "$0",
               yearlyPrice: "$0",
               features: [
-                "Unlimited game analysis",
-                "AI-powered insights",
-                "Customized puzzles",
-                "Personalized learning paths",
+                "Unlimited resume parsing",
+                "AI-powered candidate screening",
+                "Real-time AI interviews",
+                "Human-in-the-loop evaluation",
+                "Team management",
               ],
               buttonText: "Start Free Preview",
             },
             {
-              name: "Elite",
-              badge: "Elite",
-              monthlyPrice: "$20",
-              yearlyPrice: "$200",
+              name: "Enterprise",
+              badge: "Enterprise",
+              monthlyPrice: "$299",
+              yearlyPrice: "$2990",
               features: [
-                "Unlimited games",
-                "Advanced analysis",
-                "Advanced puzzles",
+                "Everything in Professional",
+                "Custom integrations",
+                "Dedicated support",
+                "Advanced analytics",
+                "DPDP/GDPR compliance",
               ],
-              buttonText: "Get Started",
+              buttonText: "Contact Sales",
             },
           ]}
         />
@@ -252,51 +338,52 @@ export default function Home() {
           items={[
             {
               id: "faq-1",
-              question: "What is Chessvine?",
+              question: "What is Hirevine?",
               answer:
-                "Chessvine is an AI-powered chess improvement platform that helps serious players analyze their games, practice with customized puzzles, and follow personalized learning paths. Upload your PGN files to get detailed AI-driven insights into your gameplay, mistakes, and strategic opportunities.",
+                "Hirevine is an Enterprise Talent Intelligence Platform that streamlines recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews. It helps organizations reduce time-to-hire by 85% by automating resume review and technical screening.",
             },
             {
               id: "faq-2",
-              question: "How does the AI game analysis work?",
+              question: "How does AI resume parsing work?",
               answer:
-                "Our advanced AI engine analyzes every move in your uploaded games, identifying critical moments, tactical mistakes, and strategic improvements. The analysis breaks down key positions, evaluates move quality, and provides actionable recommendations to help you understand where you can improve.",
+                "Hirevine uses Gemini 2.0 Flash multimodal AI to process PDF resumes directly, extracting structured data including name, email, skills, experience, and education. No brittle OCR or regex parsing—the AI understands resume formats naturally and extracts key information automatically in seconds.",
             },
             {
               id: "faq-3",
-              question: "What file format do you support?",
+              question: "What file formats do you support for resumes?",
               answer:
-                "Chessvine supports PGN (Portable Game Notation) files, which is the standard format for chess games. You can upload PGN files from any chess platform, including Chess.com, Lichess, chess24, or games you've saved manually.",
+                "Hirevine supports PDF resume files. Our multimodal AI engine can process resumes in various formats and layouts, automatically extracting candidate information, skills, work experience, and education details without manual data entry.",
             },
             {
               id: "faq-4",
-              question: "How are the puzzles generated?",
+              question: "How do AI interviews work?",
               answer:
-                "Puzzles are automatically generated from your actual game mistakes. Our AI identifies tactical opportunities and critical positions from your analyzed games, then creates customized puzzles tailored to your playing style and weaknesses. Each puzzle helps you practice the exact skills you need to improve.",
+                "Hirevine conducts real-time voice-based interviews using Gemini 2.0 Flash Live, with sub-800ms latency. The AI builds dynamic prompts based on the job description and candidate resume, asking relevant technical questions and following up based on responses. The interview is streamed in real-time and transcripts are automatically generated.",
             },
             {
               id: "faq-5",
-              question: "What is a personalized learning path?",
+              question: "What is Human-in-the-Loop (HITL) evaluation?",
               answer:
-                "A personalized learning path is an AI-generated improvement plan created specifically for you. Based on your game analyses, our AI identifies your strengths and weaknesses, then creates a structured learning plan with recommended focus areas, practice exercises, and skill development goals tailored to your current skill level.",
+                "HITL evaluation ensures human oversight in the hiring process. After AI generates interview scores and summaries, evaluators review candidates and provide mandatory justifications for their hiring decisions. This maintains quality and accountability while leveraging AI speed and efficiency.",
             },
             {
               id: "faq-6",
-              question: "Is Chessvine really free?",
+              question: "Is Hirevine really free?",
               answer:
-                "Yes! Chessvine is currently in free preview, which means all features are available at no cost. This includes unlimited game analysis, AI-powered insights, customized puzzles, and personalized learning paths. We'll introduce pricing plans in the future as we continue to enhance the platform.",
+                "Yes! Hirevine is currently in free preview, which means all features are available at no cost. This includes unlimited resume parsing, AI-powered candidate screening, real-time AI interviews, and human-in-the-loop evaluation. We'll introduce pricing plans in the future as we continue to enhance the platform.",
             },
             {
               id: "faq-7",
               question: "Do I need to create an account?",
               answer:
-                "Yes, creating a free account is required to use Chessvine. This allows us to save your game analyses, track your progress, generate personalized puzzles, and maintain your learning path. You can sign up quickly using email or Google OAuth.",
+                "Yes, creating a free account is required to use Hirevine. This allows you to manage job postings, upload resumes, conduct interviews, and track candidates. You can sign up quickly using email or Google OAuth. Organizations can invite team members with role-based access control (Admin or Evaluator).",
             },
             {
               id: "faq-8",
-              question: "How accurate is the AI analysis?",
+              question:
+                "How accurate is the AI resume parsing and candidate matching?",
               answer:
-                "Our AI analysis engine uses advanced chess algorithms and machine learning models trained on millions of games. It provides highly accurate evaluations of positions, move quality, and tactical opportunities. The analysis is designed to help you understand your games at a deeper level and identify areas for improvement.",
+                "Our multimodal AI engine uses Gemini 2.0 Flash, trained on millions of documents, to provide highly accurate resume parsing and candidate matching. The AI extracts structured data with high precision and generates match scores based on job requirements. Human evaluators review all decisions to ensure quality.",
             },
           ]}
         />
@@ -306,11 +393,11 @@ export default function Home() {
         <Footer2
           logo={{
             src: "/app-logo.png",
-            alt: "Chessvine",
-            title: "Chessvine",
+            alt: "Hirevine",
+            title: "Hirevine",
             url: "/",
           }}
-          tagline="Checkmate your limits with AI-driven chess improvement."
+          tagline="Streamline your hiring process with AI-powered talent intelligence."
           menuItems={[
             {
               title: "Product",
@@ -335,7 +422,7 @@ export default function Home() {
               ],
             },
           ]}
-          copyright={`© ${new Date().getFullYear()} Chessvine. All rights reserved.`}
+          copyright={`© ${new Date().getFullYear()} Hirevine. All rights reserved.`}
           bottomLinks={[
             { text: "Privacy Policy", url: "/privacy" },
             { text: "Terms of Service", url: "/terms" },

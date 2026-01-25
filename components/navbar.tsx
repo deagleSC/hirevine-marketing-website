@@ -166,66 +166,66 @@ export function Navbar({ className }: NavbarProps) {
   };
 
   const navGroups = [
-    {
-      name: "Product",
-      items: [
         {
-          name: "Features",
-          href: "/#features",
-          description:
-            "Discover powerful AI-powered chess analysis tools and insights.",
-          icon: Sparkles,
+          name: "Product",
+          items: [
+            {
+              name: "Features",
+              href: "/#features",
+              description:
+                "Discover powerful AI-powered recruitment and talent intelligence tools.",
+              icon: Sparkles,
+            },
+            {
+              name: "Pricing",
+              href: "/#pricing",
+              description:
+                "Choose the perfect plan for your recruitment needs.",
+              icon: DollarSign,
+            },
+            {
+              name: "FAQ",
+              href: "/#faq",
+              description: "Find answers to common questions about Hirevine.",
+              icon: HelpCircle,
+            },
+          ],
         },
         {
-          name: "Pricing",
-          href: "/#pricing",
-          description:
-            "Choose the perfect plan for your chess improvement journey.",
-          icon: DollarSign,
+          name: "Company",
+          items: [
+            {
+              name: "About",
+              href: "/about",
+              description:
+                "Learn about our mission, values, and the team behind Hirevine.",
+              icon: Info,
+            },
+            {
+              name: "Contact",
+              href: "/#contact",
+              description: "Get in touch with our team for support or inquiries.",
+              icon: Mail,
+            },
+          ],
         },
         {
-          name: "FAQ",
-          href: "/#faq",
-          description: "Find answers to common questions about Chessvine.",
-          icon: HelpCircle,
+          name: "Legal",
+          items: [
+            {
+              name: "Privacy Policy",
+              href: "/privacy",
+              description: "Understand how we collect, use, and protect your data.",
+              icon: Shield,
+            },
+            {
+              name: "Terms of Service",
+              href: "/terms",
+              description: "Review the terms and conditions for using Hirevine.",
+              icon: FileText,
+            },
+          ],
         },
-      ],
-    },
-    {
-      name: "Company",
-      items: [
-        {
-          name: "About",
-          href: "/about",
-          description:
-            "Learn about our mission, values, and the team behind Chessvine.",
-          icon: Info,
-        },
-        {
-          name: "Contact",
-          href: "/#contact",
-          description: "Get in touch with our team for support or inquiries.",
-          icon: Mail,
-        },
-      ],
-    },
-    {
-      name: "Legal",
-      items: [
-        {
-          name: "Privacy Policy",
-          href: "/privacy",
-          description: "Understand how we collect, use, and protect your data.",
-          icon: Shield,
-        },
-        {
-          name: "Terms of Service",
-          href: "/terms",
-          description: "Review the terms and conditions for using Chessvine.",
-          icon: FileText,
-        },
-      ],
-    },
   ];
 
   return (
@@ -251,12 +251,12 @@ export function Navbar({ className }: NavbarProps) {
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/app-logo.png"
-              alt="Chessvine"
+              alt="Hirevine"
               width={32}
               height={32}
               className="h-8 w-8"
             />
-            <span className="font-thin text-xl">Chessvine</span>
+            <span className="font-thin text-xl">Hirevine</span>
           </Link>
         </motion.div>
 
@@ -313,8 +313,8 @@ export function Navbar({ className }: NavbarProps) {
         >
           <ModeToggle />
           <Button size="sm" asChild>
-            <Link href="https://chessvine-web-881017844394.asia-south1.run.app/">
-              Start Free Preview
+            <Link href="https://hirevine-web-1026586041764.asia-south1.run.app/">
+              Get Started
             </Link>
           </Button>
         </motion.div>
@@ -371,10 +371,10 @@ export function Navbar({ className }: NavbarProps) {
                 <div className="flex flex-col gap-2 pt-4 border-t">
                   <Button size="sm" asChild className="w-full">
                     <Link
-                      href="https://chessvine-web-881017844394.asia-south1.run.app/"
+                      href="https://hirevine-web-1026586041764.asia-south1.run.app/"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Start Free Preview
+                      Get Started
                     </Link>
                   </Button>
                 </div>

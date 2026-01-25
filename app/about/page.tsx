@@ -3,31 +3,31 @@ import { Navbar } from "@/components/navbar";
 import { Footer2 } from "@/components/footer2";
 import { StructuredData } from "@/components/structured-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://chessvine.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Chessvine - Our mission to help chess players improve their game through AI-powered analysis and personalized learning. Discover our values, mission, and commitment to chess improvement.",
+    "Learn about Hirevine - Our mission to streamline recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews. Discover our values, mission, and commitment to transforming talent acquisition.",
   keywords: [
-    "chessvine about",
-    "chess platform mission",
-    "chess improvement",
-    "AI chess analysis",
-    "chess training platform",
+    "hirevine about",
+    "talent intelligence platform",
+    "recruitment automation",
+    "AI recruitment",
+    "hiring platform",
   ],
   openGraph: {
-    title: "About Chessvine - Our Mission & Values",
+    title: "About Hirevine - Our Mission & Values",
     description:
-      "Learn about Chessvine - Our mission to help chess players improve their game through AI-powered analysis and personalized learning. Discover our values, mission, and commitment to chess improvement.",
+      "Learn about Hirevine - Our mission to streamline recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews. Discover our values and commitment to transforming talent acquisition.",
     url: `${siteUrl}/about`,
-    siteName: "Chessvine",
+    siteName: "Hirevine",
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
         width: 1200,
         height: 630,
-        alt: "Chessvine - About Us",
+        alt: "Hirevine - About Us",
         type: "image/png",
       },
     ],
@@ -36,17 +36,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Chessvine - Our Mission & Values",
+    title: "About Hirevine - Our Mission & Values",
     description:
-      "Learn about Chessvine - Our mission to help chess players improve their game through AI-powered analysis and personalized learning.",
+      "Learn about Hirevine - Our mission to streamline recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews.",
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
-        alt: "Chessvine - About Us",
+        alt: "Hirevine - About Us",
       },
     ],
-    creator: "@chessvine",
-    site: "@chessvine",
+    creator: "@hirevine",
+    site: "@hirevine",
   },
   alternates: {
     canonical: `${siteUrl}/about`,
@@ -60,15 +60,15 @@ export const metadata: Metadata = {
 const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  name: "About Chessvine",
+  name: "About Hirevine",
   description:
-    "Learn about Chessvine - Our mission to help chess players improve their game through AI-powered analysis and personalized learning.",
+    "Learn about Hirevine - Our mission to streamline recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews.",
   url: `${siteUrl}/about`,
   mainEntity: {
     "@type": "Organization",
-    name: "Chessvine",
+    name: "Hirevine",
     description:
-      "AI-powered chess game analysis platform helping players improve their game through AI-driven insights and personalized learning.",
+      "Enterprise Talent Intelligence Platform. AI-powered recruitment screening, automated resume parsing, and voice-based interviews to streamline the hiring process.",
     url: siteUrl,
   },
 };
@@ -82,11 +82,11 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              About Chessvine
+              About Hirevine
             </h1>
             <p className="text-lg text-muted-foreground">
-              Empowering chess players to reach their full potential through
-              AI-powered analysis and personalized learning.
+              Empowering organizations to streamline recruitment and reduce
+              time-to-hire through AI-powered talent intelligence and automated screening.
             </p>
           </div>
 
@@ -97,19 +97,19 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-base text-muted-foreground">
                 <p>
-                  At Chessvine, we believe that every chess player deserves
-                  access to world-class analysis and training tools. Our mission
-                  is to democratize chess improvement by leveraging cutting-edge
-                  artificial intelligence to provide personalized insights,
-                  customized training, and actionable feedback that helps
-                  players of all levels elevate their game.
+                  At Hirevine, we believe that every organization deserves access
+                  to world-class recruitment tools that eliminate the screening bottleneck.
+                  Our mission is to transform talent acquisition by leveraging cutting-edge
+                  artificial intelligence to provide automated resume parsing, intelligent
+                  candidate screening, and real-time voice-based interviews that help
+                  organizations of all sizes hire faster and smarter.
                 </p>
                 <p>
-                  We&apos;re committed to making chess improvement accessible,
-                  engaging, and effective. Whether you&apos;re a beginner
-                  looking to learn the fundamentals or an experienced player
-                  aiming for mastery, Chessvine provides the tools you need to
-                  checkmate your limits.
+                  We&apos;re committed to making recruitment efficient, scalable, and
+                  effective. Whether you&apos;re a startup looking to build your team or
+                  an enterprise managing high-volume hiring, Hirevine provides the tools
+                  you need to reduce time-to-hire by 85% and focus on what matters most—finding
+                  the right talent.
                 </p>
               </div>
             </section>
@@ -125,18 +125,18 @@ export default function AboutPage() {
                   </h3>
                   <p className="text-sm text-muted-foreground">
                     We strive for excellence in everything we do, from the
-                    quality of our AI analysis to the user experience of our
-                    platform.
+                    accuracy of our AI parsing to the user experience of our
+                    platform and the quality of candidate matches.
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border-0 dark:border-0 bg-card space-y-2 shadow-[0_10px_40px_rgb(0,0,0,0.08),0_4px_12px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_12px_rgb(0,0,0,0.3),inset_0_1px_0_rgb(255,255,255,0.05)]">
                   <h3 className="text-lg font-semibold text-foreground">
-                    Accessibility
+                    Efficiency
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Chess improvement should be accessible to everyone,
-                    regardless of skill level or financial resources. We&apos;re
-                    committed to breaking down barriers.
+                    Recruitment should be fast and efficient, regardless of company
+                    size or hiring volume. We&apos;re committed to eliminating
+                    bottlenecks and reducing time-to-hire.
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border-0 dark:border-0 bg-card space-y-2 shadow-[0_10px_40px_rgb(0,0,0,0.08),0_4px_12px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_12px_rgb(0,0,0,0.3),inset_0_1px_0_rgb(255,255,255,0.05)]">
@@ -145,19 +145,19 @@ export default function AboutPage() {
                   </h3>
                   <p className="text-sm text-muted-foreground">
                     We continuously push the boundaries of what&apos;s possible
-                    with AI and chess analysis, always looking for new ways to
-                    help players improve.
+                    with AI and recruitment technology, always looking for new ways to
+                    help organizations hire smarter and faster.
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border-0 dark:border-0 bg-card space-y-2 shadow-[0_10px_40px_rgb(0,0,0,0.08),0_4px_12px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_12px_rgb(0,0,0,0.3),inset_0_1px_0_rgb(255,255,255,0.05)]">
                   <h3 className="text-lg font-semibold text-foreground">
-                    Community Focus
+                    Human-Centric
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    We&apos;re built by chess players, for chess players. Our
-                    platform is designed with the chess community in mind, and
-                    we&apos;re always listening to feedback to make Chessvine
-                    better.
+                    We&apos;re built by recruiters, for recruiters. Our platform
+                    maintains human oversight through HITL evaluation, ensuring
+                    quality while leveraging AI speed. We&apos;re always listening
+                    to feedback to make Hirevine better.
                   </p>
                 </div>
               </div>
@@ -169,20 +169,20 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-base text-muted-foreground">
                 <p>
-                  Chessvine is more than just a platform—it&apos;s a community
-                  of dedicated chess players committed to improvement. Whether
-                  you&apos;re just starting your chess journey or looking to
-                  take your game to the next level, we&apos;re here to support
-                  you every step of the way.
+                  Hirevine is more than just a platform—it&apos;s a solution
+                  for organizations committed to efficient and effective hiring.
+                  Whether you&apos;re just starting to scale your team or managing
+                  high-volume recruitment, we&apos;re here to support you every
+                  step of the way.
                 </p>
                 <p>
                   Start your free preview today and experience the power of
-                  AI-driven chess improvement. Upload your first game, explore
-                  our analysis features, and discover how Chessvine can help you
-                  checkmate your limits.
+                  AI-driven talent intelligence. Upload your first resumes, explore
+                  our automated parsing features, conduct AI interviews, and discover
+                  how Hirevine can help you reduce time-to-hire by 85%.
                 </p>
                 <p className="mt-6">
-                  Start Free Preview or reach out to us at{" "}
+                  Get Started or reach out to us at{" "}
                   <a
                     href="mailto:supratik.deagle@gmail.com"
                     className="text-primary hover:underline font-medium"
@@ -197,11 +197,11 @@ export default function AboutPage() {
         <Footer2
           logo={{
             src: "/app-logo.png",
-            alt: "Chessvine",
-            title: "Chessvine",
+            alt: "Hirevine",
+            title: "Hirevine",
             url: "/",
           }}
-          tagline="Checkmate your limits with AI-driven chess improvement."
+          tagline="Streamline your hiring process with AI-powered talent intelligence."
           menuItems={[
             {
               title: "Product",
@@ -226,7 +226,7 @@ export default function AboutPage() {
               ],
             },
           ]}
-          copyright={`© ${new Date().getFullYear()} Chessvine. All rights reserved.`}
+          copyright={`© ${new Date().getFullYear()} Hirevine. All rights reserved.`}
           bottomLinks={[
             { text: "Privacy Policy", url: "/privacy" },
             { text: "Terms of Service", url: "/terms" },

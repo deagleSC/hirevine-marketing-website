@@ -12,35 +12,36 @@ const montserrat = Montserrat({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://chessvine.com";
-const siteName = "Chessvine";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
+const siteName = "Hirevine";
 const siteDescription =
-  "AI-powered chess game analysis platform. Upload your PGN files, get detailed insights, practice puzzles, and improve your chess game. Checkmate your limits with Chessvine.";
+  "Enterprise Talent Intelligence Platform. AI-powered recruitment screening, automated resume parsing, and voice-based interviews. Streamline your hiring process with Hirevine.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Chessvine - Checkmate your limits | AI Chess Analysis Platform",
-    template: "%s | Chessvine",
+    default: "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
+    template: "%s | Hirevine",
   },
   description: siteDescription,
   keywords: [
-    "chess analysis",
-    "chess AI",
-    "PGN analyzer",
-    "chess game analysis",
-    "chess training",
-    "chess puzzles",
-    "chess improvement",
-    "chess insights",
-    "chess strategy",
-    "chess tactics",
-    "online chess",
-    "chess platform",
+    "talent intelligence",
+    "AI recruitment",
+    "resume parsing",
+    "automated screening",
+    "AI interviews",
+    "recruitment platform",
+    "hiring automation",
+    "candidate screening",
+    "talent acquisition",
+    "recruitment AI",
+    "hiring platform",
+    "enterprise recruitment",
   ],
-  authors: [{ name: "Chessvine Team" }],
-  creator: "Chessvine",
-  publisher: "Chessvine",
+  authors: [{ name: "Hirevine Team", url: siteUrl }],
+  creator: "Hirevine",
+  publisher: "Hirevine",
+  referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
     address: false,
@@ -63,30 +64,32 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: siteName,
-    title: "Chessvine - Checkmate your limits | AI Chess Analysis Platform",
+    title: "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
     description: siteDescription,
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
         width: 1200,
         height: 630,
-        alt: "Chessvine - AI Chess Analysis Platform",
+        alt: "Hirevine - Enterprise Talent Intelligence Platform",
         type: "image/png",
       },
     ],
+    // Add when available
+    // emails: ["contact@hirevine.ai"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chessvine - Checkmate your limits | AI Chess Analysis Platform",
+    title: "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
     description: siteDescription,
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
-        alt: "Chessvine - AI Chess Analysis Platform",
+        alt: "Hirevine - Enterprise Talent Intelligence Platform",
       },
     ],
-    creator: "@chessvine",
-    site: "@chessvine",
+    creator: "@hirevine",
+    site: "@hirevine",
   },
   robots: {
     index: true,
@@ -102,8 +105,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
-  category: "Chess Analysis",
-  manifest: "/manifest.json",
+  category: "Recruitment & Talent Intelligence",
   verification: {
     // Add verification codes here when available
     // google: "verification-code",

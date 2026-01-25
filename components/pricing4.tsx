@@ -190,7 +190,7 @@ const Pricing4 = ({
                     </ul>
                     {plan.buttonText === "Start Free Preview" ? (
                       <Button className="w-full" asChild>
-                        <Link href="https://chessvine-web-881017844394.asia-south1.run.app/">
+                        <Link href="https://hirevine-web-1026586041764.asia-south1.run.app/">
                           {plan.buttonText}
                         </Link>
                       </Button>

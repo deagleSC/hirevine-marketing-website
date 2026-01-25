@@ -30,11 +30,11 @@ interface Hero7Props {
 }
 
 const Hero7 = ({
-  heading = "Checkmate Your Limits with AI-Powered Chess Improvement",
-  description = "Transform your chess game with AI-driven analysis, customized puzzles, and personalized learning paths. Perfect for serious players committed to improvement.",
+  heading = "Streamline Your Hiring Process with AI-Powered Talent Intelligence",
+  description = "Reduce time-to-hire by 85% with automated resume parsing, AI-powered candidate screening, and voice-based interviews. Perfect for high-growth organizations looking to scale recruitment efficiently.",
   button = {
-    text: "Start Free Preview",
-    url: "https://chessvine-web-881017844394.asia-south1.run.app/",
+    text: "Get Started",
+    url: "https://hirevine-web-1026586041764.asia-south1.run.app/",
   },
   reviews,
   className,

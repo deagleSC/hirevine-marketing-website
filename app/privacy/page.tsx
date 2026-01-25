@@ -3,30 +3,30 @@ import { Navbar } from "@/components/navbar";
 import { Footer2 } from "@/components/footer2";
 import { StructuredData } from "@/components/structured-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://chessvine.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Chessvine Privacy Policy - Learn how we collect, use, and protect your data. Understand your privacy rights and how we handle your personal information.",
+    "Hirevine Privacy Policy - Learn how we collect, use, and protect your data. Understand your privacy rights and how we handle your personal information.",
   keywords: [
-    "chessvine privacy policy",
+    "hirevine privacy policy",
     "data protection",
     "privacy rights",
-    "chess platform privacy",
+    "recruitment platform privacy",
   ],
   openGraph: {
-    title: "Privacy Policy - Chessvine",
+    title: "Privacy Policy - Hirevine",
     description:
-      "Chessvine Privacy Policy - Learn how we collect, use, and protect your data. Understand your privacy rights and how we handle your personal information.",
+      "Hirevine Privacy Policy - Learn how we collect, use, and protect your data. Understand your privacy rights and how we handle your personal information.",
     url: `${siteUrl}/privacy`,
-    siteName: "Chessvine",
+    siteName: "Hirevine",
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
         width: 1200,
         height: 630,
-        alt: "Chessvine - Privacy Policy",
+        alt: "Hirevine - Privacy Policy",
         type: "image/png",
       },
     ],
@@ -35,17 +35,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy - Chessvine",
+    title: "Privacy Policy - Hirevine",
     description:
-      "Chessvine Privacy Policy - Learn how we collect, use, and protect your data.",
+      "Hirevine Privacy Policy - Learn how we collect, use, and protect your data.",
     images: [
       {
         url: `${siteUrl}/app-logo.png`,
-        alt: "Chessvine - Privacy Policy",
+        alt: "Hirevine - Privacy Policy",
       },
     ],
-    creator: "@chessvine",
-    site: "@chessvine",
+    creator: "@hirevine",
+    site: "@hirevine",
   },
   alternates: {
     canonical: `${siteUrl}/privacy`,
@@ -61,7 +61,7 @@ const privacyPageSchema = {
   "@type": "WebPage",
   name: "Privacy Policy",
   description:
-    "Chessvine Privacy Policy - Learn how we collect, use, and protect your data.",
+    "Hirevine Privacy Policy - Learn how we collect, use, and protect your data.",
   url: `${siteUrl}/privacy`,
 };
 
@@ -82,10 +82,10 @@ export default function PrivacyPage() {
           <div className="space-y-6 text-sm text-muted-foreground">
             <section className="space-y-4">
               <p>
-                Your privacy is important to us. It is Chessvine&apos;s policy
+                Your privacy is important to us. It is Hirevine&apos;s policy
                 to respect your privacy and comply with any applicable law and
                 regulation regarding any personal information we may collect
-                about you, including across our website, chessvine.com, and
+                about you, including across our website, hirevine.ai, and
                 other sites we own and operate.
               </p>
               <p>
@@ -548,8 +548,8 @@ export default function PrivacyPage() {
         <Footer2
           logo={{
             src: "/app-logo.png",
-            alt: "Chessvine",
-            title: "Chessvine",
+            alt: "Hirevine",
+            title: "Hirevine",
             url: "/",
           }}
           tagline="Checkmate your limits with AI-driven chess improvement."
@@ -577,7 +577,7 @@ export default function PrivacyPage() {
               ],
             },
           ]}
-          copyright={`© ${new Date().getFullYear()} Chessvine. All rights reserved.`}
+          copyright={`© ${new Date().getFullYear()} Hirevine. All rights reserved.`}
           bottomLinks={[
             { text: "Privacy Policy", url: "/privacy" },
             { text: "Terms of Service", url: "/terms" },
