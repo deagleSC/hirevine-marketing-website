@@ -45,8 +45,7 @@ export function getMarketingSiteUrl(): string {
   return "http://localhost:3000";
 }
 
-export const DEFAULT_APP_URL =
-  "https://hirevine-web-1026586041764.asia-south1.run.app";
+export const DEFAULT_APP_URL = "https://hirevine-v2-web.vercel.app";
 
 /**
  * Product app URL. Override with `NEXT_PUBLIC_APP_URL` for local dev.
