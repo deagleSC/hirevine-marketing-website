@@ -1,33 +1,39 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer2 } from "@/components/footer2";
 import { StructuredData } from "@/components/structured-data";
+import {
+  CONTACT_EMAIL,
+  FOOTER_MENU,
+  getAppUrl,
+  getMarketingLogo,
+  getMarketingSiteUrl,
+  KEYWORDS,
+  MARKETING_LOGO_SRC,
+  SITE_DESCRIPTION_LONG,
+  SITE_NAME,
+  SITE_TAGLINE,
+} from "@/lib/site-config";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
+const siteUrl = getMarketingSiteUrl();
+const appUrl = getAppUrl();
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description:
-    "Learn about Hirevine - Our mission to streamline recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews. Discover our values, mission, and commitment to transforming talent acquisition.",
-  keywords: [
-    "hirevine about",
-    "talent intelligence platform",
-    "recruitment automation",
-    "AI recruitment",
-    "hiring platform",
-  ],
+  title: "About",
+  description: `Learn about ${SITE_NAME}—job posts, applications, and evaluation pipelines aligned with the Hirevine web app and API.`,
+  keywords: [...KEYWORDS],
   openGraph: {
-    title: "About Hirevine - Our Mission & Values",
-    description:
-      "Learn about Hirevine - Our mission to streamline recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews. Discover our values and commitment to transforming talent acquisition.",
+    title: `About ${SITE_NAME}`,
+    description: SITE_DESCRIPTION_LONG,
     url: `${siteUrl}/about`,
-    siteName: "Hirevine",
+    siteName: SITE_NAME,
     images: [
       {
-        url: `${siteUrl}/app-logo.png`,
+        url: `${siteUrl}${MARKETING_LOGO_SRC}`,
         width: 1200,
         height: 630,
-        alt: "Hirevine - About Us",
+        alt: `${SITE_NAME} - About`,
         type: "image/png",
       },
     ],
@@ -36,13 +42,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Hirevine - Our Mission & Values",
-    description:
-      "Learn about Hirevine - Our mission to streamline recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews.",
+    title: `About ${SITE_NAME}`,
+    description: SITE_DESCRIPTION_LONG,
     images: [
       {
-        url: `${siteUrl}/app-logo.png`,
-        alt: "Hirevine - About Us",
+        url: `${siteUrl}${MARKETING_LOGO_SRC}`,
+        alt: `${SITE_NAME} - About`,
       },
     ],
     creator: "@hirevine",
@@ -60,15 +65,13 @@ export const metadata: Metadata = {
 const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  name: "About Hirevine",
-  description:
-    "Learn about Hirevine - Our mission to streamline recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews.",
+  name: `About ${SITE_NAME}`,
+  description: SITE_DESCRIPTION_LONG,
   url: `${siteUrl}/about`,
   mainEntity: {
     "@type": "Organization",
-    name: "Hirevine",
-    description:
-      "Enterprise Talent Intelligence Platform. AI-powered recruitment screening, automated resume parsing, and voice-based interviews to streamline the hiring process.",
+    name: SITE_NAME,
+    description: SITE_DESCRIPTION_LONG,
     url: siteUrl,
   },
 };
@@ -82,82 +85,86 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              About Hirevine
+              About {SITE_NAME}
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Empowering organizations to streamline recruitment and reduce
-              time-to-hire through AI-powered talent intelligence and automated screening.
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              {SITE_TAGLINE} The product experience lives in the{" "}
+              <Link
+                href={appUrl}
+                className="text-primary underline-offset-4 hover:underline"
+              >
+                Hirevine web app
+              </Link>
+              , backed by the Hirevine HTTP API for auth, organizations, jobs,
+              resumes, applications, and asynchronous pipeline runs.
             </p>
           </div>
 
           <div className="space-y-16">
             <section className="space-y-6 container mx-auto">
               <h2 className="text-3xl font-bold text-foreground mb-6">
-                Our Mission
+                Our mission
               </h2>
-              <div className="space-y-4 text-base text-muted-foreground">
+              <div className="space-y-4 text-base text-muted-foreground max-w-3xl">
                 <p>
-                  At Hirevine, we believe that every organization deserves access
-                  to world-class recruitment tools that eliminate the screening bottleneck.
-                  Our mission is to transform talent acquisition by leveraging cutting-edge
-                  artificial intelligence to provide automated resume parsing, intelligent
-                  candidate screening, and real-time voice-based interviews that help
-                  organizations of all sizes hire faster and smarter.
+                  Hiring should be easier to run and easier to understand. We
+                  built Hirevine so teams can publish roles, collect
+                  applications with resumes, and move candidates through a
+                  structured pipeline—screening, quiz, and a clear hiring report
+                  —without losing context between tools.
                 </p>
                 <p>
-                  We&apos;re committed to making recruitment efficient, scalable, and
-                  effective. Whether you&apos;re a startup looking to build your team or
-                  an enterprise managing high-volume hiring, Hirevine provides the tools
-                  you need to reduce time-to-hire by 85% and focus on what matters most—finding
-                  the right talent.
+                  The web app focuses on recruiter and candidate workflows; the
+                  API is the source of truth for data, OpenAPI documentation,
+                  and background processing when evaluation steps run outside
+                  the request that created an application.
                 </p>
               </div>
             </section>
 
             <section className="space-y-6 container mx-auto">
               <h2 className="text-3xl font-bold text-foreground mb-6">
-                Our Values
+                Values
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-6 rounded-xl border-0 dark:border-0 bg-card space-y-2 shadow-[0_10px_40px_rgb(0,0,0,0.08),0_4px_12px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_12px_rgb(0,0,0,0.3),inset_0_1px_0_rgb(255,255,255,0.05)]">
                   <h3 className="text-lg font-semibold text-foreground">
-                    Excellence
+                    Clarity
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    We strive for excellence in everything we do, from the
-                    accuracy of our AI parsing to the user experience of our
-                    platform and the quality of candidate matches.
+                    Pipeline stages, scores, and final reports should be easy to
+                    find in the application detail view—so decisions are based
+                    on shared evidence.
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border-0 dark:border-0 bg-card space-y-2 shadow-[0_10px_40px_rgb(0,0,0,0.08),0_4px_12px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_12px_rgb(0,0,0,0.3),inset_0_1px_0_rgb(255,255,255,0.05)]">
                   <h3 className="text-lg font-semibold text-foreground">
-                    Efficiency
+                    Fair process
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Recruitment should be fast and efficient, regardless of company
-                    size or hiring volume. We&apos;re committed to eliminating
-                    bottlenecks and reducing time-to-hire.
+                    Candidates get a consistent path: apply, progress through
+                    defined stages, and complete assessments when the pipeline
+                    reaches them.
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border-0 dark:border-0 bg-card space-y-2 shadow-[0_10px_40px_rgb(0,0,0,0.08),0_4px_12px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_12px_rgb(0,0,0,0.3),inset_0_1px_0_rgb(255,255,255,0.05)]">
                   <h3 className="text-lg font-semibold text-foreground">
-                    Innovation
+                    Pragmatic automation
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    We continuously push the boundaries of what&apos;s possible
-                    with AI and recruitment technology, always looking for new ways to
-                    help organizations hire smarter and faster.
+                    Long-running evaluation belongs in background jobs so the UI
+                    stays fast; the product reflects that split between what you
+                    see in the app and what the API schedules next.
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border-0 dark:border-0 bg-card space-y-2 shadow-[0_10px_40px_rgb(0,0,0,0.08),0_4px_12px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_12px_rgb(0,0,0,0.3),inset_0_1px_0_rgb(255,255,255,0.05)]">
                   <h3 className="text-lg font-semibold text-foreground">
-                    Human-Centric
+                    Security-minded defaults
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    We&apos;re built by recruiters, for recruiters. Our platform
-                    maintains human oversight through HITL evaluation, ensuring
-                    quality while leveraging AI speed. We&apos;re always listening
-                    to feedback to make Hirevine better.
+                    Roles and org boundaries matter. The API enforces
+                    authorization for recruiter versus candidate flows so each
+                    party sees only what they should.
                   </p>
                 </div>
               </div>
@@ -165,29 +172,35 @@ export default function AboutPage() {
 
             <section className="space-y-6 container mx-auto bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 md:p-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Join Our Journey
+                Try the app
               </h2>
-              <div className="space-y-4 text-base text-muted-foreground">
+              <div className="space-y-4 text-base text-muted-foreground max-w-3xl">
                 <p>
-                  Hirevine is more than just a platform—it&apos;s a solution
-                  for organizations committed to efficient and effective hiring.
-                  Whether you&apos;re just starting to scale your team or managing
-                  high-volume recruitment, we&apos;re here to support you every
-                  step of the way.
+                  Open the Hirevine web app to explore jobs, applications, and
+                  pipeline views against your configured API. For local
+                  development, follow the README in{" "}
+                  <code className="rounded bg-muted px-1 py-0.5 text-sm">
+                    hirevine-v2-web
+                  </code>{" "}
+                  and{" "}
+                  <code className="rounded bg-muted px-1 py-0.5 text-sm">
+                    hirevine-v2-be
+                  </code>
+                  .
                 </p>
                 <p>
-                  Start your free preview today and experience the power of
-                  AI-driven talent intelligence. Upload your first resumes, explore
-                  our automated parsing features, conduct AI interviews, and discover
-                  how Hirevine can help you reduce time-to-hire by 85%.
-                </p>
-                <p className="mt-6">
-                  Get Started or reach out to us at{" "}
-                  <a
-                    href="mailto:supratik.deagle@gmail.com"
-                    className="text-primary hover:underline font-medium"
+                  <Link
+                    href={appUrl}
+                    className="text-primary font-medium underline-offset-4 hover:underline"
                   >
-                    supratik.deagle@gmail.com
+                    Go to app →
+                  </Link>
+                  {" · "}
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="text-primary font-medium underline-offset-4 hover:underline"
+                  >
+                    {CONTACT_EMAIL}
                   </a>
                 </p>
               </div>
@@ -195,38 +208,10 @@ export default function AboutPage() {
           </div>
         </div>
         <Footer2
-          logo={{
-            src: "/app-logo.png",
-            alt: "Hirevine",
-            title: "Hirevine",
-            url: "/",
-          }}
-          tagline="Streamline your hiring process with AI-powered talent intelligence."
-          menuItems={[
-            {
-              title: "Product",
-              links: [
-                { text: "Features", url: "/#features" },
-                { text: "Pricing", url: "/#pricing" },
-                { text: "FAQ", url: "/#faq" },
-              ],
-            },
-            {
-              title: "Company",
-              links: [
-                { text: "About", url: "/about" },
-                { text: "Contact", url: "/#contact" },
-              ],
-            },
-            {
-              title: "Legal",
-              links: [
-                { text: "Privacy Policy", url: "/privacy" },
-                { text: "Terms of Service", url: "/terms" },
-              ],
-            },
-          ]}
-          copyright={`© ${new Date().getFullYear()} Hirevine. All rights reserved.`}
+          logo={getMarketingLogo()}
+          tagline={SITE_TAGLINE}
+          menuItems={FOOTER_MENU}
+          copyright={`© ${new Date().getFullYear()} ${SITE_NAME}. All rights reserved.`}
           bottomLinks={[
             { text: "Privacy Policy", url: "/privacy" },
             { text: "Terms of Service", url: "/terms" },

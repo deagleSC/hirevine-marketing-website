@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import {
   Menu,
@@ -17,7 +16,6 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/ui/mode-toggle";
 import {
   Drawer,
   DrawerContent,
@@ -34,7 +32,11 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { HirevineLogo } from "@/components/brand/hirevine-logo";
+import { getAppUrl, SITE_NAME } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
+
+const APP_URL = getAppUrl();
 
 interface NavbarProps {
   className?: string;
@@ -173,14 +175,14 @@ export function Navbar({ className }: NavbarProps) {
               name: "Features",
               href: "/#features",
               description:
-                "Discover powerful AI-powered recruitment and talent intelligence tools.",
+                "Jobs, applications, and pipeline views aligned with the Hirevine API.",
               icon: Sparkles,
             },
             {
               name: "Pricing",
               href: "/#pricing",
               description:
-                "Choose the perfect plan for your recruitment needs.",
+                "How we’re rolling out access while the product evolves.",
               icon: DollarSign,
             },
             {
@@ -249,14 +251,8 @@ export function Navbar({ className }: NavbarProps) {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/app-logo.png"
-              alt="Hirevine"
-              width={32}
-              height={32}
-              className="h-8 w-8"
-            />
-            <span className="font-thin text-xl">Hirevine</span>
+            <HirevineLogo size={32} className="size-8 rounded-lg" />
+            <span className="font-thin text-xl">{SITE_NAME}</span>
           </Link>
         </motion.div>
 
@@ -311,17 +307,13 @@ export function Navbar({ className }: NavbarProps) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="hidden md:flex items-center gap-4"
         >
-          <ModeToggle />
           <Button size="sm" asChild>
-            <Link href="https://hirevine-web-1026586041764.asia-south1.run.app/">
-              Get Started
-            </Link>
+            <Link href={APP_URL}>Open app</Link>
           </Button>
         </motion.div>
 
         {/* Mobile Menu */}
         <div className="flex md:hidden items-center gap-2">
-          <ModeToggle />
           <Drawer
             open={isMobileMenuOpen}
             onOpenChange={setIsMobileMenuOpen}
@@ -371,10 +363,10 @@ export function Navbar({ className }: NavbarProps) {
                 <div className="flex flex-col gap-2 pt-4 border-t">
                   <Button size="sm" asChild className="w-full">
                     <Link
-                      href="https://hirevine-web-1026586041764.asia-south1.run.app/"
+                      href={APP_URL}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Get Started
+                      Open app
                     </Link>
                   </Button>
                 </div>

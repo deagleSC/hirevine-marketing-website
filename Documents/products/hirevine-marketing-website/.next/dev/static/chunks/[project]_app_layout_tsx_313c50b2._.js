@@ -1,0 +1,9 @@
+(globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
+    script: typeof document === "object" ? document.currentScript : undefined,
+    chunks: [
+  "static/chunks/[root-of-the-server]__22cb3303._.css",
+  "static/chunks/3abcb_0f30beb0._.js",
+  "static/chunks/Documents_products_hirevine-marketing-website_76ba924a._.js"
+],
+    source: "dynamic"
+});

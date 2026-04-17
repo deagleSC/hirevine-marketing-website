@@ -31,8 +31,8 @@ interface Feature1Props {
 }
 
 const Feature1 = ({
-  title = "AI-Powered Game Analysis",
-  description = "Upload your PGN files and get detailed AI-driven insights into your games. Understand your mistakes, identify patterns, and discover opportunities for improvement.",
+  title = "Jobs and hiring pipelines",
+  description = "Create and manage job postings, optionally generate a structured hiring pipeline for a role, and keep recruiting work organized for your organization.",
   imageSrc,
   imageSrcLight,
   imageSrcDark,

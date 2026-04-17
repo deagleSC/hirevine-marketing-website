@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer2 } from "@/components/footer2";
 import { StructuredData } from "@/components/structured-data";
+import {
+  FOOTER_MENU,
+  getMarketingLogo,
+  getMarketingSiteUrl,
+  MARKETING_LOGO_SRC,
+  SITE_NAME,
+  SITE_TAGLINE,
+} from "@/lib/site-config";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
+const siteUrl = getMarketingSiteUrl();
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -20,10 +28,10 @@ export const metadata: Metadata = {
     description:
       "Hirevine Terms of Service - Read the rules and guidelines for using our Enterprise Talent Intelligence Platform. Understand your rights and responsibilities.",
     url: `${siteUrl}/terms`,
-    siteName: "Hirevine",
+    siteName: SITE_NAME,
     images: [
       {
-        url: `${siteUrl}/app-logo.png`,
+        url: `${siteUrl}${MARKETING_LOGO_SRC}`,
         width: 1200,
         height: 630,
         alt: "Hirevine - Terms of Service",
@@ -40,7 +48,7 @@ export const metadata: Metadata = {
       "Hirevine Terms of Service - Read the rules and guidelines for using our platform.",
     images: [
       {
-        url: `${siteUrl}/app-logo.png`,
+        url: `${siteUrl}${MARKETING_LOGO_SRC}`,
         alt: "Hirevine - Terms of Service",
       },
     ],
@@ -156,10 +164,10 @@ export default function TermsPage() {
                     Your Content
                   </h3>
                   <p>
-                    You retain ownership of the PGN files and chess games you
-                    upload. By uploading content, you grant us a license to
-                    process, analyze, and store your content to provide the
-                    service.
+                    You retain ownership of resumes and other materials you
+                    upload in connection with applications. By uploading
+                    content, you grant us a license to process, analyze, and
+                    store your content to provide the service.
                   </p>
                 </div>
                 <div>
@@ -272,38 +280,10 @@ export default function TermsPage() {
           </div>
         </div>
         <Footer2
-          logo={{
-            src: "/app-logo.png",
-            alt: "Hirevine",
-            title: "Hirevine",
-            url: "/",
-          }}
-          tagline="Checkmate your limits with AI-driven chess improvement."
-          menuItems={[
-            {
-              title: "Product",
-              links: [
-                { text: "Features", url: "/#features" },
-                { text: "Pricing", url: "/#pricing" },
-                { text: "FAQ", url: "/#faq" },
-              ],
-            },
-            {
-              title: "Company",
-              links: [
-                { text: "About", url: "/about" },
-                { text: "Contact", url: "/#contact" },
-              ],
-            },
-            {
-              title: "Legal",
-              links: [
-                { text: "Privacy Policy", url: "/privacy" },
-                { text: "Terms of Service", url: "/terms" },
-              ],
-            },
-          ]}
-          copyright={`© ${new Date().getFullYear()} Hirevine. All rights reserved.`}
+          logo={getMarketingLogo()}
+          tagline={SITE_TAGLINE}
+          menuItems={FOOTER_MENU}
+          copyright={`© ${new Date().getFullYear()} ${SITE_NAME}. All rights reserved.`}
           bottomLinks={[
             { text: "Privacy Policy", url: "/privacy" },
             { text: "Terms of Service", url: "/terms" },

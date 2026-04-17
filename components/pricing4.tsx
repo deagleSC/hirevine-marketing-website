@@ -5,7 +5,10 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 
+import { getAppUrl } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
+
+const APP_URL = getAppUrl();
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -74,6 +77,7 @@ const Pricing4 = ({
     },
   ],
   className,
+  id = "pricing",
 }: Pricing4Props) => {
   const [isAnnually] = useState(false);
   const ref = useRef(null);
@@ -81,7 +85,7 @@ const Pricing4 = ({
 
   return (
     <section
-      id="pricing"
+      id={id}
       ref={ref}
       className={cn("py-16 sm:py-24 md:py-32", className)}
     >
@@ -143,9 +147,13 @@ const Pricing4 = ({
           </div>
           <div className="flex w-full flex-col items-stretch gap-6 md:flex-row">
             {plans.map((plan, index) => {
-              const isFreePlan =
-                plan.monthlyPrice === "$0" || plan.name === "Free";
-              const isDisabled = !isFreePlan;
+              const isZeroPrice =
+                plan.monthlyPrice === "$0" || plan.monthlyPrice === "₹0";
+              const isAppLink =
+                plan.buttonText === "Open app" ||
+                plan.buttonText === "Start Free Preview";
+              const isEnabledPlan = isAppLink || isZeroPrice;
+              const isDisabled = !isEnabledPlan;
 
               return (
                 <motion.div
@@ -170,7 +178,7 @@ const Pricing4 = ({
                   </span>
                   <p
                     className={`text-muted-foreground ${
-                      plan.monthlyPrice === "$0" ? "invisible" : ""
+                      isZeroPrice ? "invisible" : ""
                     }`}
                   >
                     {isAnnually ? "Per year" : "Per month"}
@@ -188,11 +196,9 @@ const Pricing4 = ({
                         </li>
                       ))}
                     </ul>
-                    {plan.buttonText === "Start Free Preview" ? (
+                    {isAppLink ? (
                       <Button className="w-full" asChild>
-                        <Link href="https://hirevine-web-1026586041764.asia-south1.run.app/">
-                          {plan.buttonText}
-                        </Link>
+                        <Link href={APP_URL}>{plan.buttonText}</Link>
                       </Button>
                     ) : (
                       <Button className="w-full" disabled={isDisabled}>

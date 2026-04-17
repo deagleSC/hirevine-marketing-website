@@ -7,43 +7,41 @@ import { Faq1 } from "@/components/faq1";
 import { ContactSection } from "@/components/contact-section";
 import { Footer2 } from "@/components/footer2";
 import { StructuredData } from "@/components/structured-data";
+import {
+  CONTACT_EMAIL,
+  FEATURE_IMAGE_1,
+  FEATURE_IMAGE_2,
+  FEATURE_IMAGE_3,
+  FOOTER_MENU,
+  getAppUrl,
+  getMarketingLogo,
+  getMarketingSiteUrl,
+  KEYWORDS,
+  MARKETING_LOGO_SRC,
+  SITE_DESCRIPTION,
+  SITE_DESCRIPTION_LONG,
+  SITE_NAME,
+  SITE_TAGLINE,
+} from "@/lib/site-config";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
+const siteUrl = getMarketingSiteUrl();
+const appUrl = getAppUrl();
 
 export const metadata: Metadata = {
-  title:
-    "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
-  description:
-    "Streamline your recruitment process with AI-powered candidate screening, automated resume parsing, and voice-based interviews. Reduce time-to-hire by 85% with Hirevine's multimodal intelligence engine.",
-  keywords: [
-    "talent intelligence",
-    "AI recruitment",
-    "resume parsing",
-    "automated screening",
-    "AI interviews",
-    "recruitment platform",
-    "hiring automation",
-    "candidate screening",
-    "talent acquisition",
-    "recruitment AI",
-    "hiring platform",
-    "enterprise recruitment",
-    "voice interviews",
-    "multimodal AI",
-  ],
+  title: `${SITE_NAME} — ${SITE_DESCRIPTION}`,
+  description: SITE_DESCRIPTION_LONG,
+  keywords: [...KEYWORDS],
   openGraph: {
-    title:
-      "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
-    description:
-      "Streamline your recruitment process with AI-powered candidate screening, automated resume parsing, and voice-based interviews. Reduce time-to-hire by 85% with Hirevine.",
+    title: `${SITE_NAME} — ${SITE_DESCRIPTION}`,
+    description: SITE_DESCRIPTION_LONG,
     url: siteUrl,
-    siteName: "Hirevine",
+    siteName: SITE_NAME,
     images: [
       {
-        url: `${siteUrl}/app-logo.png`,
+        url: `${siteUrl}${MARKETING_LOGO_SRC}`,
         width: 1200,
         height: 630,
-        alt: "Hirevine - Enterprise Talent Intelligence Platform",
+        alt: `${SITE_NAME} — ${SITE_DESCRIPTION}`,
         type: "image/png",
       },
     ],
@@ -52,14 +50,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Hirevine - Enterprise Talent Intelligence Platform | AI-Powered Recruitment",
-    description:
-      "Streamline your recruitment process with AI-powered candidate screening, automated resume parsing, and voice-based interviews.",
+    title: `${SITE_NAME} — ${SITE_DESCRIPTION}`,
+    description: SITE_DESCRIPTION_LONG,
     images: [
       {
-        url: `${siteUrl}/app-logo.png`,
-        alt: "Hirevine - Enterprise Talent Intelligence Platform",
+        url: `${siteUrl}${MARKETING_LOGO_SRC}`,
+        alt: `${SITE_NAME} — ${SITE_DESCRIPTION}`,
       },
     ],
     creator: "@hirevine",
@@ -73,33 +69,27 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Hirevine",
+  name: SITE_NAME,
   url: siteUrl,
-  logo: `${siteUrl}/app-logo.png`,
-  description:
-    "Enterprise Talent Intelligence Platform. AI-powered recruitment screening, automated resume parsing, and voice-based interviews to streamline the hiring process.",
-  sameAs: [
-    // Add social media links when available
-    // "https://twitter.com/hirevine",
-    // "https://linkedin.com/company/hirevine",
-  ],
+  logo: `${siteUrl}${MARKETING_LOGO_SRC}`,
+  description: SITE_DESCRIPTION_LONG,
+  sameAs: [] as string[],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
-    email: "supratik.deagle@gmail.com",
+    email: CONTACT_EMAIL,
     availableLanguage: ["English"],
   },
   foundingDate: "2025",
-  legalName: "Hirevine",
+  legalName: SITE_NAME,
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Hirevine",
+  name: SITE_NAME,
   url: siteUrl,
-  description:
-    "Enterprise Talent Intelligence Platform. AI-powered candidate screening, automated resume parsing, and voice-based interviews to reduce time-to-hire by 85%.",
+  description: SITE_DESCRIPTION_LONG,
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -113,7 +103,7 @@ const websiteSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Hirevine",
+  name: SITE_NAME,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   offers: {
@@ -122,23 +112,14 @@ const softwareApplicationSchema = {
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
   },
-  description:
-    "Enterprise Talent Intelligence Platform. AI-powered candidate screening, automated resume parsing, and voice-based interviews to streamline recruitment.",
-  url: siteUrl,
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    ratingCount: "1",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  description: SITE_DESCRIPTION_LONG,
+  url: appUrl,
   featureList: [
-    "AI-Powered Resume Parsing",
-    "Real-Time Voice Interviews",
-    "Automated Candidate Screening",
-    "Human-in-the-Loop Evaluation",
-    "Team Collaboration",
-    "Analytics Dashboard",
+    "Organization-scoped job postings",
+    "Application pipeline with per-stage results",
+    "Resume upload and screening",
+    "Role-specific quiz assessments",
+    "Hiring-manager Markdown reports",
   ],
 };
 
@@ -151,35 +132,37 @@ const faqSchema = {
       name: "What is Hirevine?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hirevine is an Enterprise Talent Intelligence Platform that streamlines recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews. It helps organizations reduce time-to-hire by 85% by automating resume review and technical screening.",
+        text: "Hirevine is a hiring automation platform backed by the Hirevine API: teams publish jobs, candidates apply with resumes, and applications move through a structured evaluation pipeline—including resume screening, a quiz stage, and a final hiring-manager report.",
       },
     },
     {
       "@type": "Question",
-      name: "How does AI resume parsing work?",
+      name: "How does the evaluation pipeline work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hirevine uses Gemini 2.0 Flash multimodal AI to process PDF resumes directly, extracting structured data including name, email, skills, experience, and education. No brittle OCR or regex parsing—the AI understands resume formats naturally and extracts key information automatically.",
+        text: "Applications progress through automated stages: initial resume screening, then a quiz when the run reaches the quiz stage, and finally a synthesized hiring report (Markdown) for recruiters. Long-running steps run asynchronously so the app stays responsive.",
       },
     },
     {
       "@type": "Question",
-      name: "What file formats do you support for resumes?",
+      name: "Who is Hirevine for?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hirevine supports PDF resume files. Our multimodal AI engine can process resumes in various formats and layouts, automatically extracting candidate information, skills, work experience, and education details.",
+        text: "Recruiters and admins manage organizations and jobs; candidates browse active jobs, apply with a resume, and complete assessments. Roles are enforced so each party sees the right views for their account.",
       },
     },
     {
       "@type": "Question",
-      name: "How do AI interviews work?",
+      name: "How do I sign in?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hirevine conducts real-time voice-based interviews using Gemini 2.0 Flash Live, with sub-800ms latency. The AI builds dynamic prompts based on the job description and candidate resume, asking relevant technical questions and following up based on responses. The interview is streamed in real-time and transcripts are automatically generated.",
+        text: "The web app supports email and password authentication backed by the Hirevine API session model.",
       },
     },
   ],
 };
+
+const footerLogo = getMarketingLogo();
 
 export default function Home() {
   return (
@@ -188,241 +171,157 @@ export default function Home() {
       <StructuredData data={websiteSchema} />
       <StructuredData data={softwareApplicationSchema} />
       <StructuredData data={faqSchema} />
-      <StructuredData
-        data={{
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Home",
-              item: siteUrl,
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "Features",
-              item: `${siteUrl}/#features`,
-            },
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: "Pricing",
-              item: `${siteUrl}/#pricing`,
-            },
-            {
-              "@type": "ListItem",
-              position: 4,
-              name: "FAQ",
-              item: `${siteUrl}/#faq`,
-            },
-          ],
-        }}
-      />
-      <StructuredData
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          serviceType: "Talent Intelligence & Recruitment Platform",
-          provider: {
-            "@type": "Organization",
-            name: "Hirevine",
-          },
-          areaServed: "Worldwide",
-          description:
-            "AI-powered recruitment services including resume parsing, candidate screening, and voice-based interviews.",
-          offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-          },
-        }}
-      />
       <div className="min-h-screen">
         <Navbar />
         <Hero7
-          heading="Streamline Your Hiring Process with AI-Powered Talent Intelligence"
-          description="Reduce time-to-hire by 85% with automated resume parsing, AI-powered candidate screening, and voice-based interviews. Perfect for high-growth organizations looking to scale recruitment efficiently."
+          heading="Run jobs, applications, and hiring pipelines in one place"
+          description="Publish roles under your organization, collect applications with resumes, and move candidates through structured evaluation—screening, quiz, and hiring-ready reports your team can act on."
           button={{
-            text: "Get Started",
-            url: "https://hirevine-web-1026586041764.asia-south1.run.app/",
+            text: "Open app",
+            url: appUrl,
           }}
           reviews={null}
         />
 
-        {/* Feature 1: Multimodal Resume Parsing - Image on right, text on left */}
         <Feature1
           id="features"
-          title="Multimodal AI Resume Parsing"
-          description="Process PDF resumes directly with Gemini 2.0 Flash multimodal AI—no brittle OCR or regex parsing. Automatically extract candidate information, skills, experience, and education. Our advanced AI understands resume formats naturally and extracts structured data in seconds."
-          imageSrcLight="/assets/analysis-light.png"
-          imageSrcDark="/assets/analysis-dark.png"
-          imageAlt="AI Resume Parsing"
+          title="Jobs and AI-shaped pipelines"
+          description="Create job postings and, when configured, generate a structured hiring pipeline for a role—stages, quiz content, and screening logic—so every opening follows a consistent evaluation path."
+          imageSrcLight={FEATURE_IMAGE_1}
+          imageSrcDark={FEATURE_IMAGE_1}
+          imageAlt="Job posts and hiring pipeline configuration"
           imagePosition="right"
           variant="default"
         />
 
-        {/* Feature 2: Real-Time AI Interviews - Image on left, text on right */}
         <Feature1
-          title="Real-Time AI-Powered Interviews"
-          description="Conduct voice-based interviews with sub-800ms latency using Gemini 2.0 Flash Live. The AI builds dynamic prompts based on job descriptions and candidate resumes, asking relevant technical questions and following up intelligently. Stream interviews in real-time with automatic transcript generation."
-          imageSrcLight="/assets/puzzles-light.png"
-          imageSrcDark="/assets/puzzles-dark.png"
-          imageAlt="AI Interviews"
+          title="Applications candidates can complete"
+          description="Candidates discover active jobs, apply with a resume stored securely, and take the pipeline quiz when their application reaches that stage. Recruiters see status, scores, and reasoning as the run progresses."
+          imageSrcLight={FEATURE_IMAGE_2}
+          imageSrcDark={FEATURE_IMAGE_2}
+          imageAlt="Applications list and candidate flow"
           imagePosition="left"
           variant="muted"
         />
 
-        {/* Feature 3: Human-in-the-Loop Evaluation - Image on right, text on left */}
         <Feature1
-          title="Human-in-the-Loop Evaluation"
-          description="Maintain human oversight with mandatory justification signatures for all hiring decisions. Evaluators review AI-generated scores and summaries, then provide their own assessment with required justifications. This HITL model ensures quality while maintaining the speed of AI automation."
-          imageSrcLight="/assets/dashboard-light.png"
-          imageSrcDark="/assets/dashboard-dark.png"
-          imageAlt="Evaluation Dashboard"
+          title="Reports your team can read"
+          description="When the pipeline finishes, recruiters get a hiring-manager-style report as Markdown—including summaries and recommendations—rendered in the application detail view alongside the rest of the pipeline."
+          imageSrcLight={FEATURE_IMAGE_3}
+          imageSrcDark={FEATURE_IMAGE_3}
+          imageAlt="Hiring report and application detail"
           imagePosition="right"
           variant="default"
         />
 
         <Pricing4
+          id="pricing"
           title="Pricing"
-          description="Hirevine is currently in free preview. Pricing plans will be introduced in the future as we continue to enhance the platform."
+          description="Hirevine is evolving with the product. The app is available to try while we validate jobs, pipelines, and recruiter workflows—paid tiers may follow."
           plans={[
             {
-              name: "Professional",
-              badge: "Professional",
-              monthlyPrice: "$99",
-              yearlyPrice: "$990",
+              name: "Team",
+              badge: "Planned",
+              monthlyPrice: "—",
+              yearlyPrice: "—",
               features: [
-                "Unlimited resume parsing",
-                "AI-powered interviews",
-                "Advanced candidate matching",
-                "Team collaboration",
+                "Reserved for future paid capabilities",
+                "Same core flows until launch",
               ],
-              buttonText: "Get Started",
+              buttonText: "Notify me",
             },
             {
-              name: "Free",
-              badge: "Free Preview",
+              name: "Preview",
+              badge: "Current",
               monthlyPrice: "$0",
               yearlyPrice: "$0",
               features: [
-                "Unlimited resume parsing",
-                "AI-powered candidate screening",
-                "Real-time AI interviews",
-                "Human-in-the-loop evaluation",
-                "Team management",
+                "Organizations, jobs, and applications",
+                "Pipeline stages with screening and quiz",
+                "Resume upload and application detail views",
+                "Hiring report (Markdown) on completion",
               ],
-              buttonText: "Start Free Preview",
+              buttonText: "Open app",
             },
             {
               name: "Enterprise",
-              badge: "Enterprise",
-              monthlyPrice: "$299",
-              yearlyPrice: "$2990",
+              badge: "Planned",
+              monthlyPrice: "—",
+              yearlyPrice: "—",
               features: [
-                "Everything in Professional",
-                "Custom integrations",
-                "Dedicated support",
-                "Advanced analytics",
-                "DPDP/GDPR compliance",
+                "For larger hiring programs and integrations",
+                "Details to be announced",
               ],
-              buttonText: "Contact Sales",
+              buttonText: "Contact us",
             },
           ]}
         />
 
         <Faq1
-          heading="Frequently Asked Questions"
+          id="faq"
+          heading="Frequently asked questions"
           items={[
             {
               id: "faq-1",
               question: "What is Hirevine?",
               answer:
-                "Hirevine is an Enterprise Talent Intelligence Platform that streamlines recruitment through AI-powered candidate screening, automated resume parsing, and voice-based interviews. It helps organizations reduce time-to-hire by 85% by automating resume review and technical screening.",
+                "Hirevine is a hiring automation platform: recruiters and candidates use the web app for job posts, applications, pipeline visualization, and application details, backed by the Hirevine API for authentication, organizations, jobs, resumes, applications, and asynchronous evaluation runs.",
             },
             {
               id: "faq-2",
-              question: "How does AI resume parsing work?",
+              question: "What does the API do?",
               answer:
-                "Hirevine uses Gemini 2.0 Flash multimodal AI to process PDF resumes directly, extracting structured data including name, email, skills, experience, and education. No brittle OCR or regex parsing—the AI understands resume formats naturally and extracts key information automatically in seconds.",
+                "The API handles authentication, organizations and jobs, resume storage, the application lifecycle, OpenAPI documentation, and asynchronous pipeline runs (e.g. via Inngest) for screening, quiz progression, and final report generation when AI is configured.",
             },
             {
               id: "faq-3",
-              question: "What file formats do you support for resumes?",
+              question: "How are resumes handled?",
               answer:
-                "Hirevine supports PDF resume files. Our multimodal AI engine can process resumes in various formats and layouts, automatically extracting candidate information, skills, work experience, and education details without manual data entry.",
+                "Candidates upload a resume as part of applying; files are stored using the platform’s configured blob storage. Screening uses the resume text in pipeline automation according to your job configuration.",
             },
             {
               id: "faq-4",
-              question: "How do AI interviews work?",
+              question: "What is the quiz stage?",
               answer:
-                "Hirevine conducts real-time voice-based interviews using Gemini 2.0 Flash Live, with sub-800ms latency. The AI builds dynamic prompts based on the job description and candidate resume, asking relevant technical questions and following up based on responses. The interview is streamed in real-time and transcripts are automatically generated.",
+                "When an application reaches the quiz stage, the candidate can load and submit the pipeline quiz from the app. Results feed into the next automation steps and the final report.",
             },
             {
               id: "faq-5",
-              question: "What is Human-in-the-Loop (HITL) evaluation?",
+              question: "What is the hiring report?",
               answer:
-                "HITL evaluation ensures human oversight in the hiring process. After AI generates interview scores and summaries, evaluators review candidates and provide mandatory justifications for their hiring decisions. This maintains quality and accountability while leveraging AI speed and efficiency.",
+                "After the final pipeline stage, a hiring-manager-style report is produced as Markdown and shown on the application detail page—readable in the product with Markdown rendering—so your team can review outcomes in one place.",
             },
             {
               id: "faq-6",
-              question: "Is Hirevine really free?",
+              question: "Which roles exist in the product?",
               answer:
-                "Yes! Hirevine is currently in free preview, which means all features are available at no cost. This includes unlimited resume parsing, AI-powered candidate screening, real-time AI interviews, and human-in-the-loop evaluation. We'll introduce pricing plans in the future as we continue to enhance the platform.",
+                "Accounts map to recruiter, candidate, and admin roles. Candidates apply across organizations; recruiters manage jobs and applications within their org with API-enforced authorization.",
             },
             {
               id: "faq-7",
-              question: "Do I need to create an account?",
+              question: "Do I need an account?",
               answer:
-                "Yes, creating a free account is required to use Hirevine. This allows you to manage job postings, upload resumes, conduct interviews, and track candidates. You can sign up quickly using email or Google OAuth. Organizations can invite team members with role-based access control (Admin or Evaluator).",
+                "Yes. Sign up with email and password to use the app as a recruiter or candidate. You’ll need a running API (see each repo’s README) and environment configuration for local development.",
             },
             {
               id: "faq-8",
-              question:
-                "How accurate is the AI resume parsing and candidate matching?",
+              question: "Where do AI features come from?",
               answer:
-                "Our multimodal AI engine uses Gemini 2.0 Flash, trained on millions of documents, to provide highly accurate resume parsing and candidate matching. The AI extracts structured data with high precision and generates match scores based on job requirements. Human evaluators review all decisions to ensure quality.",
+                "When AI keys and related services are configured on the API, jobs can use AI-assisted pipeline generation and automated stages. Without those services, some steps may be limited or use stubs—see the API documentation for details.",
             },
           ]}
         />
 
-        <ContactSection />
+        <ContactSection
+          title="Contact"
+          description="Questions about Hirevine or partnerships? Send a note—we read every message."
+        />
 
         <Footer2
-          logo={{
-            src: "/app-logo.png",
-            alt: "Hirevine",
-            title: "Hirevine",
-            url: "/",
-          }}
-          tagline="Streamline your hiring process with AI-powered talent intelligence."
-          menuItems={[
-            {
-              title: "Product",
-              links: [
-                { text: "Features", url: "#features" },
-                { text: "Pricing", url: "#pricing" },
-                { text: "FAQ", url: "#faq" },
-              ],
-            },
-            {
-              title: "Company",
-              links: [
-                { text: "About", url: "/about" },
-                { text: "Contact", url: "#contact" },
-              ],
-            },
-            {
-              title: "Legal",
-              links: [
-                { text: "Privacy Policy", url: "/privacy" },
-                { text: "Terms of Service", url: "/terms" },
-              ],
-            },
-          ]}
-          copyright={`© ${new Date().getFullYear()} Hirevine. All rights reserved.`}
+          logo={footerLogo}
+          tagline={SITE_TAGLINE}
+          menuItems={FOOTER_MENU}
+          copyright={`© ${new Date().getFullYear()} ${SITE_NAME}. All rights reserved.`}
           bottomLinks={[
             { text: "Privacy Policy", url: "/privacy" },
             { text: "Terms of Service", url: "/terms" },

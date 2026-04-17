@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hirevine marketing site
 
-## Getting Started
+Public **Next.js** marketing website for **Hirevine**: positioning, feature sections, FAQ, and legal pages. It does **not** implement product APIs—those live in **hirevine-v2-be**; the recruiter/candidate app is **hirevine-v2-web**.
 
-First, run the development server:
+Copy and structure are aligned with the current product: job posts, applications, evaluation pipelines (resume screening → quiz → hiring report), and links to the deployed web app.
+
+## Related repositories
+
+| Repository | Role |
+|------------|------|
+| [hirevine-v2-web](../hirevine-v2-web/) | Product web app (recruiters & candidates) |
+| [hirevine-v2-be](../hirevine-v2-be/) | HTTP API, OpenAPI, Inngest |
+
+## Requirements
+
+- **Node.js** ≥ 20
+
+## Environment
+
+Copy `.env.example` to `.env.local` and adjust:
+
+| Variable | Purpose |
+|----------|---------|
+| `NEXT_PUBLIC_SITE_URL` | Canonical URL of **this** marketing deployment (no trailing slash). Used for metadata, sitemap, and canonical URLs. |
+| `NEXT_PUBLIC_APP_URL` | URL of the **product web app** (“Open app” / CTAs). Defaults in `lib/site-config.ts` if unset. |
+
+## Local development
 
 ```bash
+npm ci
+cp .env.example .env.local   # set URLs as needed
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the URL printed by the dev server (default `http://localhost:3000`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Next.js dev server |
+| `npm run build` | Production build |
+| `npm run start` | Production server |
+| `npm run lint` | ESLint |
 
-## Learn More
+## Content & assets
 
-To learn more about Next.js, take a look at the following resources:
+- Global styles and theme tokens: `app/globals.css` (aligned with hirevine-v2-web typography setup).
+- Site-wide copy and CTAs: `lib/site-config.ts`.
+- Feature section images (optional): place `image1.png`, `image2.png`, `image3.png` under `public/` (see `FEATURE_IMAGE_*` in `lib/site-config.ts`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private project unless otherwise stated by the repository owner.

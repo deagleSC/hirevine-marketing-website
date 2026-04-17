@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 
+import { getAppUrl } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
@@ -30,11 +31,11 @@ interface Hero7Props {
 }
 
 const Hero7 = ({
-  heading = "Streamline Your Hiring Process with AI-Powered Talent Intelligence",
-  description = "Reduce time-to-hire by 85% with automated resume parsing, AI-powered candidate screening, and voice-based interviews. Perfect for high-growth organizations looking to scale recruitment efficiently.",
+  heading = "Run jobs, applications, and hiring pipelines in one place",
+  description = "Publish roles under your organization, collect applications with resumes, and move candidates through structured evaluation—screening, quiz, and hiring-ready reports for your team.",
   button = {
-    text: "Get Started",
-    url: "https://hirevine-web-1026586041764.asia-south1.run.app/",
+    text: "Open app",
+    url: getAppUrl(),
   },
   reviews,
   className,

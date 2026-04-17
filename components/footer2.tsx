@@ -13,7 +13,8 @@ interface MenuItem {
 interface Footer2Props {
   logo?: {
     url: string;
-    src: string;
+    /** Defaults to the Hirevine mark (`/app-logo.png`) when omitted. */
+    src?: string;
     alt: string;
     title: string;
   };
@@ -29,10 +30,10 @@ interface Footer2Props {
 
 const Footer2 = ({
   logo = {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg",
-    alt: "blocks for shadcn/ui",
-    title: "Shadcnblocks.com",
-    url: "https://www.shadcnblocks.com",
+    src: "/app-logo.png",
+    alt: "Hirevine",
+    title: "Hirevine",
+    url: "/",
   },
   className,
   tagline = "Components made easy.",
@@ -82,6 +83,8 @@ const Footer2 = ({
     { text: "Privacy Policy", url: "#" },
   ],
 }: Footer2Props) => {
+  const logoSrc = logo.src ?? "/app-logo.png";
+
   return (
     <section className={cn("pb-16", className)}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,11 +94,11 @@ const Footer2 = ({
               <div className="flex items-center gap-2 lg:justify-start">
                 <Link href={logo.url} className="flex items-center gap-2">
                   <Image
-                    src={logo.src}
+                    src={logoSrc}
                     alt={logo.alt}
                     width={32}
                     height={32}
-                    className="h-8 w-8"
+                    className="h-8 w-8 rounded-lg object-contain"
                   />
                   <span className="text-xl font-thin">{logo.title}</span>
                 </Link>

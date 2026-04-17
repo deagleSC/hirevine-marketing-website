@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer2 } from "@/components/footer2";
 import { StructuredData } from "@/components/structured-data";
+import {
+  FOOTER_MENU,
+  getMarketingLogo,
+  getMarketingSiteUrl,
+  MARKETING_LOGO_SRC,
+  SITE_NAME,
+  SITE_TAGLINE,
+} from "@/lib/site-config";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hirevine.ai";
+const siteUrl = getMarketingSiteUrl();
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -20,10 +28,10 @@ export const metadata: Metadata = {
     description:
       "Hirevine Privacy Policy - Learn how we collect, use, and protect your data. Understand your privacy rights and how we handle your personal information.",
     url: `${siteUrl}/privacy`,
-    siteName: "Hirevine",
+    siteName: SITE_NAME,
     images: [
       {
-        url: `${siteUrl}/app-logo.png`,
+        url: `${siteUrl}${MARKETING_LOGO_SRC}`,
         width: 1200,
         height: 630,
         alt: "Hirevine - Privacy Policy",
@@ -40,7 +48,7 @@ export const metadata: Metadata = {
       "Hirevine Privacy Policy - Learn how we collect, use, and protect your data.",
     images: [
       {
-        url: `${siteUrl}/app-logo.png`,
+        url: `${siteUrl}${MARKETING_LOGO_SRC}`,
         alt: "Hirevine - Privacy Policy",
       },
     ],
@@ -197,7 +205,7 @@ export default function PrivacyPage() {
                     <li>Email address</li>
                     <li>Name</li>
                     <li>Profile picture (if provided)</li>
-                    <li>Authentication provider (email or Google OAuth)</li>
+                    <li>Authentication credentials (e.g. email and password)</li>
                   </ul>
                 </div>
 
@@ -235,12 +243,12 @@ export default function PrivacyPage() {
                     include:
                   </p>
                   <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                    <li>PGN (Portable Game Notation) files you upload</li>
-                    <li>Chess game analysis results and insights</li>
-                    <li>Generated puzzles based on your games</li>
+                    <li>Job postings and application records</li>
+                    <li>Resume files and derived text used for screening</li>
+                    <li>Pipeline and quiz responses tied to applications</li>
+                    <li>Evaluation outputs and hiring reports</li>
                     <li>User profiles and preferences</li>
                     <li>Analytics data and usage metrics</li>
-                    <li>Learning paths and progress tracking</li>
                   </ul>
                 </div>
               </div>
@@ -268,11 +276,10 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
                 <li>Register for an account or sign in</li>
-                <li>Upload PGN files for analysis</li>
-                <li>Use our AI-powered game analysis features</li>
-                <li>Generate and practice with customized puzzles</li>
-                <li>Access personalized learning paths</li>
-                <li>Contact us via email or contact form</li>
+                <li>Create or manage job postings and applications</li>
+                <li>Upload resumes and complete hiring pipeline steps</li>
+                <li>Use recruiter or candidate features in the product</li>
+                <li>Contact us via email</li>
                 <li>Subscribe to our newsletter or updates</li>
               </ul>
               <p className="mt-2">
@@ -353,16 +360,20 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
                 <li>
-                  <strong>Google OAuth:</strong> For user authentication.
-                  Google&apos;s privacy policy applies to OAuth data.
+                  <strong>Infrastructure providers:</strong> For example,
+                  hosting, databases, and file storage used to operate the
+                  product (such as resume storage), according to our deployment
+                  configuration.
                 </li>
                 <li>
-                  <strong>Google Cloud Storage:</strong> For storing your PGN
-                  files and analysis data securely.
+                  <strong>AI providers:</strong> When enabled, model providers may
+                  process job and application content to power pipeline
+                  generation and automated evaluation stages.
                 </li>
                 <li>
-                  <strong>Google Gemini AI:</strong> For analyzing your chess
-                  games and generating AI-powered insights and recommendations.
+                  <strong>Workflow automation:</strong> Background job services
+                  may process events to advance applications through pipeline
+                  stages.
                 </li>
               </ul>
             </section>
@@ -546,38 +557,10 @@ export default function PrivacyPage() {
           </div>
         </div>
         <Footer2
-          logo={{
-            src: "/app-logo.png",
-            alt: "Hirevine",
-            title: "Hirevine",
-            url: "/",
-          }}
-          tagline="Checkmate your limits with AI-driven chess improvement."
-          menuItems={[
-            {
-              title: "Product",
-              links: [
-                { text: "Features", url: "/#features" },
-                { text: "Pricing", url: "/#pricing" },
-                { text: "FAQ", url: "/#faq" },
-              ],
-            },
-            {
-              title: "Company",
-              links: [
-                { text: "About", url: "/about" },
-                { text: "Contact", url: "/#contact" },
-              ],
-            },
-            {
-              title: "Legal",
-              links: [
-                { text: "Privacy Policy", url: "/privacy" },
-                { text: "Terms of Service", url: "/terms" },
-              ],
-            },
-          ]}
-          copyright={`© ${new Date().getFullYear()} Hirevine. All rights reserved.`}
+          logo={getMarketingLogo()}
+          tagline={SITE_TAGLINE}
+          menuItems={FOOTER_MENU}
+          copyright={`© ${new Date().getFullYear()} ${SITE_NAME}. All rights reserved.`}
           bottomLinks={[
             { text: "Privacy Policy", url: "/privacy" },
             { text: "Terms of Service", url: "/terms" },
